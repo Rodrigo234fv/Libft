@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 17:25:46 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/07 17:25:46 by rode-alb         ###   ########.fr       */
+/*   Created: 2022/10/24 17:10:11 by rode-alb          #+#    #+#             */
+/*   Updated: 2022/10/24 17:14:36 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-
-void			*ft_memset(void *b, int c, size_t len);
-
-size_t			ft_strlen(const char *s);
-
-char			*ft_strlcpy(char *dest, char *src);
-
-char			*ft_strdup(char *src);
-
-int				isdigit( int arg);
-
-int				ft_tolower(int ch);
-
-int				ft_toupper(int ch);
-
-#endif
+int	ft_isalnum(int b)
+{
+	if (b > 47 && b < 58)
+	{
+		return (1);
+	}
+	if (b > 64 && b < 91 || b > 96 && b < 123)
+	{
+		return (1);
+	}
+	return (0);
+}

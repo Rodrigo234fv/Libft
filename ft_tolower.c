@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 17:25:46 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/07 17:25:46 by rode-alb         ###   ########.fr       */
+/*   Created: 2022/10/24 16:47:40 by rode-alb          #+#    #+#             */
+/*   Updated: 2022/10/24 16:58:27 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
+int	ft_tolower(int ch)
+{
+	if (ch > 64 && ch < 91)
+	{
+		ch = ch + 32;
+	}
+	return (ch);
+}
 
-void			*ft_memset(void *b, int c, size_t len);
+/* #include <stdio.h>
+#include <ctype.h>
+int main() {
+    char c;
 
-size_t			ft_strlen(const char *s);
+    c = 'm';
+	printf("%c -> %c", c, ft_tolower(c));
 
-char			*ft_strlcpy(char *dest, char *src);
+    c = 'D';
+    printf("\n%c -> %c", c, ft_tolower(c));
 
-char			*ft_strdup(char *src);
-
-int				isdigit( int arg);
-
-int				ft_tolower(int ch);
-
-int				ft_toupper(int ch);
-
-#endif
+    c = '9';
+    printf("\n%c -> %c", c, ft_tolower(c));
+    return 0;
+} */
