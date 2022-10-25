@@ -46,13 +46,13 @@ int				ft_tolower(int ch);
 
 char			*strchr(const char *str, int c);
 
-// strrchr
+char			*ft_strrchr(const char *str, int c);
 
 int				ft_strncmp(char *s1, char *s2, unsigned int n);
 
-// memchr
+void			*ft_memchr(const void *str, int c, size_t n);
 
-// memcmp
+int				ft_memcmp(const void *str1, const void *str2, size_t n);
 
 char			*ft_strnstr(char *str, char *to_find, size_t len);
 

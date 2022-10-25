@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 16:34:26 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/25 18:41:27 by rode-alb         ###   ########.fr       */
+/*   Created: 2022/10/25 18:29:48 by rode-alb          #+#    #+#             */
+/*   Updated: 2022/10/25 18:43:16 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {
 	unsigned int		i;
 	unsigned int		a;
 	unsigned int		b;
+	char				*s1;
+	char				*s2;
 
 	i = 0;
+	s1 = (void *)str1;
+	s2 = (void *)str2;
 	if (n != 0)
 	{
 		a = s1[i];
@@ -32,3 +36,27 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	}
 	return (a - b);
 }
+
+/* #include <stdio.h>
+#include <string.h>
+
+int main () {
+   char str1[15];
+   char str2[15];
+   int ret;
+
+   memcpy(str1, "abcdef", 6);
+   memcpy(str2, "ABCDEF", 6);
+
+   ret = ft_memcmp(str1, str2, 5);
+
+   if(ret > 0) {
+      printf("str2 is less than str1");
+   } else if(ret < 0) {
+      printf("str1 is less than str2");
+   } else {
+      printf("str1 is equal to str2");
+   }
+   
+   return(0);
+} */
