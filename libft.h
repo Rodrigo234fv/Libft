@@ -20,7 +20,7 @@ void		    *ft_memset(void *b, int c, size_t len);
 
 size_t			ft_strlen(const char *s);
 
-char			*ft_strlcpy(char *dest, char *src);
+size_t			ft_strlcpy(char *dest, char *src, size_t dstsize);
 
 char			*ft_strdup(char *src);
 
