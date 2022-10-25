@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char *ft_strstr(char *str, char *to_find, size_t len)
 {
 	int n;
@@ -21,7 +23,7 @@ char *ft_strstr(char *str, char *to_find, size_t len)
     {
         return (str);
     }
-    while (str[n] != '\0' || len > a)
+    while (str[n] != '\0' || len > n)
     {
         a = 0;
         while (str[n] && str[n++] == to_find[a++])
