@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 11:29:31 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/25 16:24:36 by rode-alb         ###   ########.fr       */
+/*   Created: 2022/10/25 16:13:49 by rode-alb          #+#    #+#             */
+/*   Updated: 2022/10/25 16:19:06 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int arg)
+int	ft_isalpha(int a)
 {
-	if (arg <= 31 || arg == 127)
-	{
-		return (0);
-	}
-	else
+	if ((a >= 'A' && a <= 'Z') || (a >= 'a' && a <= 'z'))
 	{
 		return (1);
 	}
+	return (0);
 }
-
-/* #include <stdio.h>
-int main()
-{
-	char c;
-
-	c = '\n';
-	printf("Result %c to is passed to is print: %d", c, ft_isprint(c));
-} */
