@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 16:43:42 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/07 16:43:42 by marvin           ###   ########.fr       */
+/*   Created: 2022/10/25 11:29:31 by rode-alb          #+#    #+#             */
+/*   Updated: 2022/10/25 11:29:31 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+
+int ft_isprint(int arg)
 {
-	size_t		i;
 
-	i = 0;
-	if(!s)
+	if (arg <= 31 || arg == 127)
 	{
-		return(0);
+		return (0);
 	}
-	i = 0;
-	while (i < n)
+	else
 	{
-		*(unsigned char*)(s + i) = (unsigned char) c;
-		i++;
+		return (1);
 	}
-	return (s);
 }
+
+/* #include <stdio.h>
+int main()
+{
+	char c;
+
+	c = '\n';
+	printf("Result %c to is passed to is print: %d", c, ft_isprint(c));
+} */
