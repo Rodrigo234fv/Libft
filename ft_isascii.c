@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 11:29:31 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/25 11:29:31 by rode-alb         ###   ########.fr       */
+/*   Created: 2022/10/25 12:25:26 by rode-alb          #+#    #+#             */
+/*   Updated: 2022/10/25 12:25:26 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-int ft_isprint(int arg)
+int	ft_isascii( int c)
 {
-
-	if (arg <= 31 || arg == 127)
-	{
-		return (0);
-	}
-	else
+	if (c >= 0 && c <= 127)
 	{
 		return (1);
 	}
+	else
+	{
+		return (0);
+	}
 }
-
-/* #include <stdio.h>
-int main()
-{
-	char c;
-
-	c = '\n';
-	printf("Result %c to is passed to is print: %d", c, ft_isprint(c));
-} */

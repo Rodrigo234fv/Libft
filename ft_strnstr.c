@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 11:29:31 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/25 11:29:31 by rode-alb         ###   ########.fr       */
+/*   Created: 2022/10/25 11:56:32 by rode-alb          #+#    #+#             */
+/*   Updated: 2022/10/25 11:56:32 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-
-int ft_isprint(int arg)
+char *ft_strstr(char *str, char *to_find, size_t len)
 {
+	int n;
+    int a;
 
-	if (arg <= 31 || arg == 127)
-	{
-		return (0);
-	}
-	else
-	{
-		return (1);
-	}
+    n = 0;
+    a = a;
+    if (to_find[a] == '\0')
+    {
+        return (str);
+    }
+    while (str[n] != '\0' || len > a)
+    {
+        a = 0;
+        while (str[n] && str[n++] == to_find[a++])
+        {
+            if (to_find[a] == '\0')
+            {
+                return (&str[n - a]);
+            }
+        }
+    }
+    return (0);
 }
-
-/* #include <stdio.h>
-int main()
-{
-	char c;
-
-	c = '\n';
-	printf("Result %c to is passed to is print: %d", c, ft_isprint(c));
-} */
