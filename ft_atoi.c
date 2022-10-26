@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 16:49:51 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/25 17:02:27 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/10/26 18:20:13 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,3 +40,22 @@ int	ft_atoi(const char *str)
 	}
 	return (res * sign);
 }
+
+/* #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main () {
+   int val;
+   char str[20];
+   
+   strcpy(str, "98993489");
+   val = ft_atoi(str);
+   printf("String value = %s, Int value = %d\n", str, val);
+
+   strcpy(str, "\n-1234alspoint.com");
+   val = ft_atoi(str);
+   printf("String value = %s, Int value = %d\n", str, val);
+
+   return(0);
+} */

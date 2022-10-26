@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 18:18:10 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/25 18:26:42 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/10/26 18:19:32 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memchr(const void *str, int c, size_t n)
 {
-	int		i;
-	char	*s;
+	size_t		i;
+	char		*s;
 
 	i = 0;
 	s = (void *)str;

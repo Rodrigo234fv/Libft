@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 11:29:31 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/25 16:24:36 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/10/26 16:14:52 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,7 @@
 
 int	ft_isprint(int arg)
 {
-	if (arg <= 31 || arg == 127)
-	{
-		return (0);
-	}
-	else
-	{
-		return (1);
-	}
+	return (!(arg <= 31 || arg == 127));
 }
 
 /* #include <stdio.h>
@@ -29,6 +22,6 @@ int main()
 {
 	char c;
 
-	c = '\n';
+	c = 'b';
 	printf("Result %c to is passed to is print: %d", c, ft_isprint(c));
 } */

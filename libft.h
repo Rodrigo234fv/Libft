@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:25:46 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/26 15:25:43 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/10/26 18:34:12 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void			ft_bzero(void *s, size_t n);
 
 void			*ft_memcpy(void *dest, const void *src, size_t n);
 
-// memmove
+void			*ft_memmove(void *str1, const void *str2, size_t n);
 
 size_t			ft_strlcpy(char *dest, char *src, size_t dstsize);
 
@@ -48,7 +48,7 @@ char			*strchr(const char *str, int c);
 
 char			*ft_strrchr(const char *str, int c);
 
-int				ft_strncmp(char *s1, char *s2, unsigned int n);
+int				ft_strncmp(char *s1, char *s2, size_t n);
 
 void			*ft_memchr(const void *str, int c, size_t n);
 
@@ -58,7 +58,7 @@ char			*ft_strnstr(char *str, char *to_find, size_t len);
 
 int				ft_atoi(const char *str);
 
-// calloc
+void			*calloc(size_t nitems, size_t size);
 
 char			*ft_strdup(char *src);
 

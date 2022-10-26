@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 18:29:48 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/26 14:49:34 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/10/26 18:19:03 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {
-	unsigned int		i;
-	unsigned int		a;
-	unsigned int		b;
-	char				*s1;
-	char				*s2;
+	size_t		i;
+	int			a;
+	int			b;
+	char		*s1;
+	char		*s2;
 
 	i = 0;
 	s1 = (void *)str1;

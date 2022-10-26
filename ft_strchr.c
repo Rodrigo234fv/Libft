@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 17:05:01 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/25 17:55:00 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/10/26 18:17:47 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ char	*ft_strchr(const char *str, int c)
 /* #include <stdio.h>
 #include <string.h>
 int main () {
-   int len;
    const char str[] = "http://www.tutorialspoint.com";
    const char ch = '.';
    char *ret;

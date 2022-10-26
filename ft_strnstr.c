@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 11:56:32 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/26 15:32:35 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/10/26 18:10:57 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 char	*ft_strnstr(char *str, char *to_find, size_t len)
 {
-	int		n;
-	int		a;
+	size_t		n;
+	size_t		a;
 
 	n = 0;
-	a = a;
+	a = 0;
 	if (to_find[a] == '\0')
 	{
 		return (str);
@@ -36,3 +36,16 @@ char	*ft_strnstr(char *str, char *to_find, size_t len)
 	}
 	return (0);
 }
+
+/* #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(void) {
+	char *searchingFor = "stack";
+	char *in = "bumbaaaa stack llumba";
+    printf("found: %s\n", ft_strnstr(in, searchingFor, 30) ? "yes" : "no");
+    printf("found: %s\n", ft_strnstr(in, searchingFor, 5) ? "yes" : "no");
+    printf("found: %s\n", ft_strnstr(in, searchingFor, 15) ? "yes" : "no");
+    return 0;
+} */

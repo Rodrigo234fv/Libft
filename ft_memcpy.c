@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 14:48:32 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/26 15:29:01 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/10/26 18:48:08 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,18 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	int		i;
-	char	*d;
-	char	*s;
+	size_t			i;
+	char			*d;
+	const char		*s;
 
 	i = 0;
 	d = (char *)dest;
 	s = (char *)src;
-	while (n > i && s[i])
+	while (n > i)
 	{
 		d[i] = s[i];
 		i++;
 	}
-	d[i] = '\0';
 	return (dest);
 }
 
