@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 11:56:32 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/26 15:32:35 by rode-alb         ###   ########.fr       */
+/*   Created: 2022/10/26 15:20:11 by rode-alb          #+#    #+#             */
+/*   Updated: 2022/10/26 15:31:06 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(char *str, char *to_find, size_t len)
+void	*ft_memmove(void *str1, const void *str2, size_t n)
 {
-	int		n;
-	int		a;
+	int		i;
+	char	*s1;
+	char	*s2;
 
-	n = 0;
-	a = a;
-	if (to_find[a] == '\0')
+	i = 0;
+	s1 = (char *)dest;
+	s2 = (char *)src;
+	while (n > i && s2[i])
 	{
-		return (str);
+		s1[i] = s2[i];
+		i++;
 	}
-	while (str[n] != '\0' && len > n)
-	{
-		a = 0;
-		while (str[n] && str[n++] == to_find[a++])
-		{
-			if (to_find[a] == '\0')
-			{
-				return (&str[n - a]);
-			}
-		}
-	}
-	return (0);
+	s1[i] = '\0';
+	return(str1);
 }
