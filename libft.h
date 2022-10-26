@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:25:46 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/07 17:25:46 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/10/26 15:11:04 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void			*ft_memset(void *s, int c, size_t n);
 
 void			ft_bzero(void *s, size_t n);
 
-// memcpy
+void			*ft_memcpy(void *dest, const void *src, size_t n);
 
 // memmove
 
