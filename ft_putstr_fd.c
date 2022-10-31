@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 18:59:50 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/26 19:02:52 by rode-alb         ###   ########.fr       */
+/*   Created: 2022/10/31 12:05:31 by rode-alb          #+#    #+#             */
+/*   Updated: 2022/10/31 12:05:31 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_putstr_fd(char *s, int fd)
 {
-	char	*str;
-	size_t		i;
+	int		i;
 
 	i = 0;
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!str)
-	{
-		return (0);
-	} 
-	else
-	{
-		while(i < len)
+	if (s)
+		while (s[i] != '\0')
 		{
-			str[i] = s[start];
-			i++;
-			start++;
+			write(fd, &s[i], 1);
+			s++;
 		}
-		str[i] = '\0';
-		return (str);
-	}
+}
 
+#include <stdio.h>
+int main (void)
+{
+	ft_putstr_fd("Baguette au fromage", 1);
 }

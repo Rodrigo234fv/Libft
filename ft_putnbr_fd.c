@@ -1,38 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 18:59:50 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/26 19:02:52 by rode-alb         ###   ########.fr       */
+/*   Created: 2022/10/31 12:17:48 by rode-alb          #+#    #+#             */
+/*   Updated: 2022/10/31 12:17:48 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_putchar_fd(char c, int fd)
 {
-	char	*str;
-	size_t		i;
+	write(fd, &c, 1);
+}
 
-	i = 0;
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!str)
+void	ft_putnbr_fd(int n, int fd)
+{
+	if (n == -2147483648)
 	{
-		return (0);
-	} 
-	else
-	{
-		while(i < len)
-		{
-			str[i] = s[start];
-			i++;
-			start++;
-		}
-		str[i] = '\0';
-		return (str);
+		ft_putchar_fd('-', fd);
+		ft_putchar_fd('2', fd);
+		n = 147483648;
 	}
+	if (n < 0)
+	{
+		n = n * (-1);
+		ft_putchar_fd('-', fd);
+	}
+	if (n >= 10)
+	{
+		ft_putnbr_fd (n / 10, fd);
+		ft_putnbr_fd (n % 10, fd);
+	}
+	if (n <= 9)
+	{
+		ft_putchar_fd (n + '0', fd);
+	}
+}
 
+int main (void)
+{
+	int i = 1;
+	ft_putnbr_fd(500, 1);
 }
