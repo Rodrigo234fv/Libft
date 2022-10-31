@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 16:39:52 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/31 18:22:13 by rode-alb         ###   ########.fr       */
+/*   Created: 2022/10/31 18:22:38 by rode-alb          #+#    #+#             */
+/*   Updated: 2022/10/31 18:33:15 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,24 @@
 /* 
 f(0, ''); 
 */
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	char	*str;
 	int		i;
 
 	i = 0;
-	str = (char *)malloc(sizeof (char) * (ft_strlen(s) + 1));
 	while (s[i])
-	{
-		str[i] = f(i, s[i]);
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
+		f(i++, s);
 }
+
+/* void ft(unsigned int f, char *str)
+{
+	str[f] = 'c';
+}	
+
+#include <stdio.h>
+int main()
+{  
+	char str[] = "str";
+	ft_striteri(str, ft);
+	printf("%s\n", str);
+} */
