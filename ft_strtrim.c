@@ -12,24 +12,19 @@
 
 #include "libft.h"
 
-size_t			ft_strlen(const char *s);
-
-char	*ft_strchr(const char *str, int c);
-
-size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize);
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char		*str;
+	size_t		i;
 	size_t		a;
 	size_t		z;
 
-	str = '\0';
+	i = 0;
 	a = 0;
 	z = ft_strlen(s1);
 	if (!s1 || !set)
 	{
-		return (0);
+		return (NULL);
 	}
 	while (s1[a] && ft_strchr(set, s1[a]))
 	{
@@ -40,16 +35,25 @@ char	*ft_strtrim(char const *s1, char const *set)
 		z--;
 	}
 	str = (char *)malloc(sizeof(char) * (z - a + 1));
-	if(str)
-		ft_strlcpy(str, &s1[a], z - a + 1);
+	while(z > a)
+	{
+		str[i] = s1[a];
+		i++;
+		a++;
+	}
+
 	return (str);
 }
-
+/* 
 #include <stdio.h> 
 
 int main()
 {
-	printf("%s\n", ft_strtrim("abqbc", "abc"));
-	printf("%s\n", ft_strtrim("xavocadoyz", "xyz"));
-	return 0;
-}
+	char *str;
+
+	str = ft_strtrim("abcabcBanana", "abc");
+
+	printf("%s\n", str);
+	printf("%s\n", ft_strtrim("xavocadzzz", "xyz"));
+	
+} */

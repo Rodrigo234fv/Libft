@@ -36,7 +36,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 	}
 	return (size2);
 }
-
+/* 
 #include <stdio.h>
 #include <string.h>
 
@@ -46,4 +46,4 @@ int main()
    char var2[7] = "world!";
    ft_strlcpy(var1, var2, sizeof(var2));
    printf("hello %s", var1);
-}
+} */

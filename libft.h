@@ -76,7 +76,7 @@ char			*ft_itoa(int n);
 
 // ft_striteri
 
-/void			ft_putchar_fd(char c, int fd);
+void			ft_putchar_fd(char c, int fd);
 
 void			ft_putstr_fd(char *s, int fd);
 
