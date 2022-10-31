@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:17:48 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/31 12:17:48 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/10/31 17:01:59 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 }
 
-int main (void)
+/* int main (void)
 {
 	int i = 1;
 	ft_putnbr_fd(500, 1);
-}
+} */

@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:25:46 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/26 18:34:12 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/10/31 17:53:06 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char			*ft_strjoin(char const *s1, char const *s2);
 
 char			*ft_strtrim(char const *s1, char const *set);
 
-// ft_split
+char			**ft_split(char const *s, char c);
 
 char			*ft_itoa(int n);
 

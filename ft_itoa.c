@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:45:30 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/28 16:45:30 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/10/31 17:16:14 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,9 @@ char	*ft_itoa(int n)
 
 	nb = n;
 	i = lenght(nb);
-	if(!(str = malloc((i + 1) * sizeof(str))))
-	{
+	str = malloc((i + 1) * sizeof(str));
+	if (!str)
 		return (0);
-	}
 	str[i--] = '\0';
 	if (n < 0)
 	{
@@ -54,10 +53,7 @@ char	*ft_itoa(int n)
 		n = -n;
 	}
 	if (n == 0)
-	{
 		str[0] = 48;
-		return (str);
-	}
 	while (n > 0)
 	{
 		str[i] = 48 + (n % 10);
@@ -67,8 +63,8 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 int main()
 {
-	printf("%s\n", ft_itoa(-2147483647));
-}
+	printf("%s\n", ft_itoa(0));
+} */

@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:59:50 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/26 19:02:52 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/10/31 18:13:04 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*str;
+	char		*str;
 	size_t		i;
 
 	i = 0;
@@ -22,10 +22,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!str)
 	{
 		return (0);
-	} 
+	}
 	else
 	{
-		while(i < len)
+		while (i < len)
 		{
 			str[i] = s[start];
 			i++;
@@ -34,5 +34,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		str[i] = '\0';
 		return (str);
 	}
-
 }
+
+/* #include <stdio.h>
+int main()
+{
+	char str[] =  "wormgqerbnghwo";
+	printf("%s\n,", ft_substr( str, 5, 6));
+} */

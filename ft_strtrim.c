@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 15:10:04 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/28 15:10:04 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/10/31 17:47:19 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,25 +23,18 @@ char	*ft_strtrim(char const *s1, char const *set)
 	a = 0;
 	z = ft_strlen(s1);
 	if (!s1 || !set)
-	{
 		return (NULL);
-	}
 	while (s1[a] && ft_strchr(set, s1[a]))
-	{
 		a++;
-	}
 	while (s1[z - 1] && ft_strchr(set, s1[z - 1]) && z > a)
-	{
 		z--;
-	}
 	str = (char *)malloc(sizeof(char) * (z - a + 1));
-	while(z > a)
+	while (z > a)
 	{
 		str[i] = s1[a];
 		i++;
 		a++;
 	}
-
 	return (str);
 }
 /* 
