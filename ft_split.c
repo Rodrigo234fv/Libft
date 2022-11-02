@@ -10,54 +10,128 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* #include "libft.h" */
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
+{
+	size_t		i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
 
 int	counter(const char *str, char c)
 {
 	int		i;
-	int		words;
+	int		n_words;
 
 	i = 0;
-	words = 0;
+	n_words = 0;
+	while (str[i] == c)
+		i++;
 	while (str[i] != '\0')
 	{
-		while (str[i] == c)
-			str++;
-		if (*str)
-			words++;
-		while (str[i] != '\0' && str[i] != c)
-			str++;
+		if (str[i] != c)
+		{
+			n_words++;
+			while (str[i] && str[i] != c)
+				i++;
+		}
+		if (str[i] != '\0')
+		{
+			i++;
+		}
 	}
-	return (words);
+	return (n_words);
 }
 
-/* #include <stdio.h>
-int main ()
+char	*word_maker(char const *str, int a, int z)
 {
-	int s;
-	s = counter("BBolt", 'B');
-	printf("%d\n", s);
-} */
+	char	*word;
+	int		i;
 
-/* void	word_separation(char **split, char const *s, char cha)
-{
-	char =			**split_p;
-	char const =	*str;
-
-	str = s;
-	split_p = split;
-	while(str)
+	i = 0;
+	word = (char *)malloc(sizeof(char) * (z - a + 1));
+	while (z > a)
+	{
+		word[i] = str[a];
+		i++;
+		a++;
+	}	
+	word[i] = '\0';
+	return (word);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		size;
-	char	**new_char
+	size_t	i;
+	size_t	j;
+	int		pos;
+	char	**split;
 
-	if (!s)
+	i = 0;
+	j = 0;
+	split = (char **)malloc(sizeof(char *) * (counter(s,c) + 1));
+	if (!s || !split)
+		return (NULL);
+	pos = -1;
+	while (i <= ft_strlen(s))
 	{
-		return (0);
+		if (s[i] != c && pos < 0)
+			pos = i;
+		else if ((s[i] == c || i == ft_strlen(s)) && pos >= 0)
+		{
+			split[j] = word_maker(s, pos, i);
+			j++;
+			pos = -1;
+		}
+		i++;
 	}
-	size = counter(s,c)
-	new_char = (char**)malloc (sizeof(char *) * (size + 1));
-} */
+	split[j] = '\0';
+	return (split);
+}
+
+void	ft_putstr_fd(char *s, int fd)
+{
+	int		i;
+
+	i = 0;
+	if (s)
+	{
+		while (s[i] != '\0')
+		{
+			write(fd, &s[i], 1);
+			i++;
+		}
+	}
+}
+
+void	ft_putendl_fd(char *s, int fd)
+{
+	ft_putstr_fd(s, fd);
+	write(fd ,"\n", 1);
+}
+
+
+int		main(void)
+{
+	char	**tab;
+	int	i;
+
+	i = 0;
+	tab = ft_split("      split    bola jola    poinha      espinha   this for   me  !", ' ');
+	if (!tab[0])
+		ft_putendl_fd("ok\n", 1);
+	while (tab[i] != NULL)
+	{
+		ft_putendl_fd(tab[i], 1);
+		i++;
+	}
+}
+
+
+
