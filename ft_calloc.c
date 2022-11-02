@@ -6,35 +6,22 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:23:56 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/26 18:44:11 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/11/02 21:10:13 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
-{
-	char	*str;
-
-	str = (void *)s;
-	while (n > 0)
-	{
-		*(str) = 0;
-		str++;
-		n--;
-	}
-}
-
 void	*ft_calloc(size_t nitems, size_t size)
 {
 	void	*pointer;
 
+	if (((nitems * size) / size) != nitems)
+		return (NULL);
 	pointer = (char *)malloc(nitems * size);
 	if (!pointer)
-	{
-		return (0);
-	}
-	ft_bzero(pointer, nitems);
+		return (NULL);
+	ft_bzero(pointer, nitems * size);
 	return (pointer);
 }
 

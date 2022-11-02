@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 18:29:48 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/26 18:19:03 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/11/02 19:02:00 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,17 @@
 int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {
 	size_t		i;
-	int			a;
-	int			b;
-	char		*s1;
-	char		*s2;
 
 	i = 0;
-	s1 = (void *)str1;
-	s2 = (void *)str2;
-	if (n != 0)
-	{
-		a = s1[i];
-		b = s2[i];
-	}
-	while (s1[i] != '\0' && (s1[i] == s2[i]) && (n > i + 1))
+	if (!n)
+		return (0);
+	while ((((char *)str1)[i] == ((char *)str2)[i]) && (i < n))
 	{
 		i++;
-		a = s1[i];
-		b = s2[i];
 	}
-	return (a - b);
+	if (i >= n)
+		return (0);
+	return (((char *)str2)[i] - ((char *)str1)[i]);
 }
 
 /* #include <stdio.h>

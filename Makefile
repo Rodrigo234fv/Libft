@@ -6,7 +6,7 @@
 #    By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 17:33:17 by rode-alb          #+#    #+#              #
-#    Updated: 2022/10/31 17:00:58 by rode-alb         ###   ########.fr        #
+#    Updated: 2022/11/02 17:44:51 by rode-alb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,11 @@ FILES = ft_isascii.c ft_isprint.c ft_strlcat.c ft_bzero.c ft_atoi.c ft_isalnum.c
 		ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
 		ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
-FILES_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
+#FILES_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
 				ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
 OBJS = $(FILES:.c=.o)
-OBJS_BONUS = $(FILES_BONUS: .c=.o)
+#OBJS_BONUS = $(FILES_BONUS: .c=.o)
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
@@ -35,8 +35,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 		ar rcs $(NAME) $(OBJS)
 
-bonus: $(OBJS) $(OBJS_BONUS)
-		ar rcs $(NAME) $(OBJS) $(OBJS_BONUS)
+#bonus: $(OBJS) $(OBJS_BONUS)
+#		ar rcs $(NAME) $(OBJS) $(OBJS_BONUS)
 
 clean: 
 		rm -f $(OBJS) $(OBJS_BONUS)
@@ -44,4 +44,4 @@ fclean: clean
 		rm -f $(NAME)
 re: fclean $(NAME)
 
-.PHONY: all, clean, fclean, re, bonus
+#.PHONY: all, clean, fclean, re

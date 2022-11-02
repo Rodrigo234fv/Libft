@@ -6,23 +6,11 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 18:11:12 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/26 16:29:49 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/11/02 19:44:58 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *s)
-{
-	size_t		i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
 
 char	*ft_strdup(char *src)
 {

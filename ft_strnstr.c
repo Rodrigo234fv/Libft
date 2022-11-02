@@ -6,35 +6,34 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 11:56:32 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/26 18:10:57 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/11/02 20:35:08 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(char *str, char *to_find, size_t len)
+char	*ft_strnstr(const char *str, const char *f, size_t len)
 {
 	size_t		n;
 	size_t		a;
 
 	n = 0;
 	a = 0;
-	if (to_find[a] == '\0')
-	{
-		return (str);
-	}
-	while (str[n] != '\0' && len > n)
+	if (!f || ((char *)f)[a] == '\0')
+		return ((char *)str);
+	if (!len)
+		return (0);
+	while (((char *)str)[n] && n < len)
 	{
 		a = 0;
-		while (str[n] && str[n++] == to_find[a++])
-		{
-			if (to_find[a] == '\0')
-			{
-				return (&str[n - a]);
-			}
-		}
+		while (((char *)str)[n + a] == ((char *)f)[a] && \
+		((char *)f)[a] && (n + a) < len)
+			a++;
+		if (((char *)f)[a] == '\0')
+			return (((char *)str) + (n));
+		n++;
 	}
-	return (0);
+	return (NULL);
 }
 
 /* #include <stdio.h>
