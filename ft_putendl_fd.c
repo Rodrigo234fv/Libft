@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:14:47 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/31 12:14:47 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/11/02 16:32:31 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_putendl_fd(char *s, int fd)
 {
 	ft_putstr_fd(s, fd);
-	write(fd,"\n", 1);
+	write(fd, "\n", 1);
 }
