@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:06:03 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/11/02 15:06:03 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/11/02 16:53:19 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
 	t_list	*node;
-	
+
 	new_list = 0;
 	while (lst)
 	{

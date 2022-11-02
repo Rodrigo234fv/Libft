@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 14:40:03 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/11/02 14:40:03 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/11/02 16:53:05 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Desc: Adds the node ’new’ at the end of the list. */
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *last_place;
+	t_list	*last_place;
 
 	if (!lst && !*lst)
 	{

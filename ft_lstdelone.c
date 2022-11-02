@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 14:47:29 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/11/02 14:47:29 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/11/02 16:52:50 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,3 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 	del(lst -> content);
 	free (lst);
 }
-
-
-

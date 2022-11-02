@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:16:03 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/31 17:46:14 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/11/02 16:56:09 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	split = (char **)malloc(sizeof(char *) * (counter(s,c) + 1));
+	split = (char **)malloc(sizeof(char *) * (counter(s, c) + 1));
 	if (!s || !split)
 		return (NULL);
 	pos = -1;
@@ -95,43 +95,16 @@ char	**ft_split(char const *s, char c)
 	return (split);
 }
 
-void	ft_putstr_fd(char *s, int fd)
-{
-	int		i;
-
-	i = 0;
-	if (s)
-	{
-		while (s[i] != '\0')
-		{
-			write(fd, &s[i], 1);
-			i++;
-		}
-	}
-}
-
-void	ft_putendl_fd(char *s, int fd)
-{
-	ft_putstr_fd(s, fd);
-	write(fd ,"\n", 1);
-}
-
-
-int		main(void)
+/* int		main(void)
 {
 	char	**tab;
 	int	i;
 
 	i = 0;
-	tab = ft_split("      split    bola jola    poinha      espinha   this for   me  !", ' ');
-	if (!tab[0])
-		ft_putendl_fd("ok\n", 1);
+	tab = ft_split("    ft_split    splits   spaces   for   me  !", ' ');
 	while (tab[i] != NULL)
 	{
 		ft_putendl_fd(tab[i], 1);
 		i++;
 	}
-}
-
-
-
+} */

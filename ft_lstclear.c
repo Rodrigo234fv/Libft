@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 14:50:43 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/11/02 14:50:43 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/11/02 16:51:16 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 
 	while (*lst)
 	{
-		node = (*lst) -> next;
+		node = *lst -> next;
 		ft_lstdelone(*lst, del);
 		*lst = node;
 	}
-	*lst = (NULL); 
+	*lst = (NULL);
 }
