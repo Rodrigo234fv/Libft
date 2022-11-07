@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 11:56:32 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/11/02 20:35:08 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/11/07 17:33:41 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *str, const char *f, size_t len)
 
 	n = 0;
 	a = 0;
-	if (!f || ((char *)f)[a] == '\0')
+	if (((char *)f)[a] == '\0')
 		return ((char *)str);
 	if (!len)
 		return (0);

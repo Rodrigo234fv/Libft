@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 15:10:04 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/31 17:47:19 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/11/07 18:16:43 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,34 +15,29 @@
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char		*str;
-	size_t		i;
-	size_t		a;
-	size_t		z;
+	int			a;
+	int			z;
 
-	i = 0;
 	a = 0;
-	z = ft_strlen(s1);
+	z = ft_strlen(s1) - 1;
 	if (!s1)
 		return (NULL);
 	if (!set)
 		return (ft_strdup(s1));
-	while (s1[a] && ft_strchr(set, s1[a]))
+	while (ft_strchr(set, s1[a]) && a <= z)
 		a++;
-	while (s1[z - 1] && ft_strchr(set, s1[z - 1]) && z > a) // Tirar first arg maybe
+	if (a > z)
+		return (ft_strdup(s1 + z + 1));
+	while (s1[z - 1] && ft_strchr(set, s1[z]) && z >= 0)
 		z--;
-	str = (char *)malloc(sizeof(*s1) * (z - a + 1));
+	str = (char *)malloc(sizeof(*s1) * (z - a + 2));
 	if (!str)
 		return (NULL);
-	while (a < z)
-	{
-		str[i] = s1[a];
-		i++;
-		a++;
-	}
+	ft_strlcpy (str, &s1[a], z - a + 2);
 	return (str);
 }
-/* 
-#include <stdio.h> 
+
+/* #include <stdio.h> 
 
 int main()
 {

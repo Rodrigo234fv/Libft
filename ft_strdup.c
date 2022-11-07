@@ -6,13 +6,13 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 18:11:12 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/11/02 19:44:58 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/11/07 14:31:58 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
 	char	*dest;
 	int		i;

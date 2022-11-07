@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 18:18:10 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/11/02 18:47:05 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/11/07 17:25:37 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,10 @@ void	*ft_memchr(const void *str, int c, size_t n)
 	size_t		i;
 
 	i = 0;
-	if (!str || !n)
+	if (!n)
 	{
 		return (NULL);
 	}
-	if (!c)
-		return ((void *)str);
 	while (i < n)
 	{
 		if (((char *)str)[i] == (char)c)

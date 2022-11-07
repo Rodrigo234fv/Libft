@@ -6,28 +6,22 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:45:30 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/10/31 17:16:14 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/11/07 18:05:31 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	lenght(int nb)
+size_t	lenght(int nb)
 {
 	int		lenght;
 
 	lenght = 0;
-	if (nb == 0)
+	if (nb <= 0)
 	{
 		lenght++;
-		return (lenght);
 	}
-	if (nb < 0)
-	{
-		nb = -nb;
-		lenght++;
-	}
-	while (nb > 0)
+	while (nb)
 	{
 		nb /= 10;
 		lenght++;
@@ -38,27 +32,26 @@ int	lenght(int nb)
 char	*ft_itoa(int n)
 {
 	char			*str;
-	int				nb;
-	int				i;
+	int				len;
+	long			nb;
 
+	len = lenght(n);
 	nb = n;
-	i = lenght(nb);
-	str = malloc((i + 1) * sizeof(str));
+	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
-	str[i--] = '\0';
-	if (n < 0)
+	if (nb < 0)
 	{
 		str[0] = '-';
-		n = -n;
+		nb = -nb;
 	}
-	if (n == 0)
+	if (nb == 0)
 		str[0] = 48;
-	while (n > 0)
+	str[len--] = '\0';
+	while (nb)
 	{
-		str[i] = 48 + (n % 10);
-		n /= 10;
-		i--;
+		str[len--] = '0' + (nb % 10);
+		nb /= 10;
 	}
 	return (str);
 }

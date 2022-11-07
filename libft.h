@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:25:46 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/11/02 19:22:53 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/11/07 14:32:09 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int			ft_atoi(const char *str);
 
 void		*ft_calloc(size_t nitems, size_t size);
 
-char		*ft_strdup(char *src);
+char		*ft_strdup(const char *src);
 
 /* Additional Functions */
 

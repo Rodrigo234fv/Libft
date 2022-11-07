@@ -6,7 +6,7 @@
 #    By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 17:33:17 by rode-alb          #+#    #+#              #
-#    Updated: 2022/11/02 17:44:51 by rode-alb         ###   ########.fr        #
+#    Updated: 2022/11/07 16:48:24 by rode-alb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ FILES_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_
 				ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
 OBJS = $(FILES:.c=.o)
-OBJS_BONUS = $(FILES_BONUS: .c=.o)
+OBJS_BONUS = $(FILES_BONUS:.c=.o)
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
@@ -35,12 +35,12 @@ NAME = libft.a
 all: $(NAME)
 
 $(NAME): $(OBJS)
-		ar -rc $(NAME) $(OBJS)
+		@ar rcs $(NAME) $(OBJS)
 		$(MSG1)
 
-bonus: $(OBJS_BONUS)
-		ar -rc $(NAME) $(OBJS_BONUS)
-		$(MSG1)
+#bonus: $(OBJS) $(OBJS_BONUS)
+#		@ar -rcs $(NAME) $(OBJS) $(OBJS_BONUS)
+#		$(MSG1)
 
 clean: 
 		rm -f $(OBJS) $(OBJS_BONUS)
@@ -49,4 +49,4 @@ fclean: clean
 		rm -f $(NAME)
 re: fclean $(NAME)
 
-.PHONY: all, clean, fclean, re
+.PHONY: all, clean, fclean, re, bonus
