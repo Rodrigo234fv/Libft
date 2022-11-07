@@ -22,14 +22,18 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	a = 0;
 	z = ft_strlen(s1);
-	if (!s1 || !set)
+	if (!s1)
 		return (NULL);
+	if (!set)
+		return (ft_strdup(s1));
 	while (s1[a] && ft_strchr(set, s1[a]))
 		a++;
-	while (s1[z - 1] && ft_strchr(set, s1[z - 1]) && z > a)
+	while (s1[z - 1] && ft_strchr(set, s1[z - 1]) && z > a) // Tirar first arg maybe
 		z--;
-	str = (char *)malloc(sizeof(char) * (z - a + 1));
-	while (z > a)
+	str = (char *)malloc(sizeof(*s1) * (z - a + 1));
+	if (!str)
+		return (NULL);
+	while (a < z)
 	{
 		str[i] = s1[a];
 		i++;

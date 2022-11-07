@@ -23,29 +23,19 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		i++;
 	if (i >= n)
 		return (0);
-	return (s1[i] - s2[i]);
+	return (s2[i] - s1[i]);
 }
 
-/* #include <stdio.h>
+#include <stdio.h>
 #include <string.h>
 
 int main () {
-   char str1[15];
-   char str2[15];
-   int ret;
+	char str1[] = "test\200";
+	char str2[] = "test\0";
+	int ret;
 
-   strcpy(str1, "abcdef");
-   strcpy(str2, "ABCDEF");
+	ret = ft_strncmp(str1, str2, 6);
 
-   ret = ft_strncmp(str1, str2, 4);
-
-   if(ret < 0) {
-      printf("str1 is less than str2");
-   } else if(ret > 0) {
-      printf("str2 is less than str1");
-   } else {
-      printf("str1 is equal to str2");
-   }
-   
-   return(0);
-} */
+	printf("%d", ret);
+	return(0);
+}

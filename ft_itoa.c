@@ -45,7 +45,7 @@ char	*ft_itoa(int n)
 	i = lenght(nb);
 	str = malloc((i + 1) * sizeof(str));
 	if (!str)
-		return (0);
+		return (NULL);
 	str[i--] = '\0';
 	if (n < 0)
 	{

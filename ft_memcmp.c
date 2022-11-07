@@ -17,7 +17,7 @@ int	ft_memcmp(const void *str1, const void *str2, size_t n)
 	size_t		i;
 
 	i = 0;
-	if (!n)
+	if (!n || !str1 || !str2)
 		return (0);
 	while ((((char *)str1)[i] == ((char *)str2)[i]) && (i < n))
 	{

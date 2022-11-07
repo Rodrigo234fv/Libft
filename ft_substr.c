@@ -12,32 +12,32 @@
 
 #include "libft.h"
 
+#include <stdio.h>
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char		*str;
 	size_t		i;
+	size_t		j;
 
 	i = 0;
+	j = 0;
 	if (!s)
 		return (NULL);
-	if (start > ft_strlen(s))
-		return (ft_strdup(""));
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!str)
+	str = (char *)malloc(sizeof(*s) * (len + 1));
+	if (!str || !len || (start >= ft_strlen(s)))
 		return (NULL);
-	while (i < len && start < len && str[i])
-	{
-		str[i] = s[start];
+	while (s[i] != s[start])
 		i++;
-		start++;
-	}
-	str[i] = '\0';
+	while (len > j && s[i])
+		str[j++] = s[i++];
+	str[j] = '\0';
 	return (str);
 }
 
 /* #include <stdio.h>
 int main()
 {
-	char str[] =  "wormgqerbnghwo";
-	printf("%s\n,", ft_substr( str, 5, 6));
+	char str[] =  "Abacaxi";
+	printf("%s", ft_substr( str, 0, 10));
 } */
