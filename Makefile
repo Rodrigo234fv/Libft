@@ -6,7 +6,7 @@
 #    By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 17:33:17 by rode-alb          #+#    #+#              #
-#    Updated: 2022/11/07 16:48:24 by rode-alb         ###   ########.fr        #
+#    Updated: 2022/11/07 18:20:51 by rode-alb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,9 +38,9 @@ $(NAME): $(OBJS)
 		@ar rcs $(NAME) $(OBJS)
 		$(MSG1)
 
-#bonus: $(OBJS) $(OBJS_BONUS)
-#		@ar -rcs $(NAME) $(OBJS) $(OBJS_BONUS)
-#		$(MSG1)
+bonus: $(OBJS) $(OBJS_BONUS)
+		@ar -rcs $(NAME) $(OBJS) $(OBJS_BONUS)
+		$(MSG1)
 
 clean: 
 		rm -f $(OBJS) $(OBJS_BONUS)

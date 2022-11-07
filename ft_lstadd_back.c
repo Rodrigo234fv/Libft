@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 14:40:03 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/11/02 16:53:05 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/11/07 18:41:39 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last_place;
 
-	if (!lst && !*lst)
+	if (lst)
 	{
-		*lst = new;
-		return ;
+		if (*lst == NULL)
+			*lst = new;
+		else
+		{
+			last_place = ft_lstlast(*(lst));
+			last_place -> next = new;
+		}
 	}
-	while (last_place -> next)
-	{
-		last_place = last_place -> next;
-	}
-	last_place -> next = new;
 }
