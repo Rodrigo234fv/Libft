@@ -6,7 +6,7 @@
 #    By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 17:33:17 by rode-alb          #+#    #+#              #
-#    Updated: 2022/11/07 18:20:51 by rode-alb         ###   ########.fr        #
+#    Updated: 2022/11/09 14:33:23 by rode-alb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,8 +25,8 @@ FILES_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_
 OBJS = $(FILES:.c=.o)
 OBJS_BONUS = $(FILES_BONUS:.c=.o)
 
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CC = clang
+CFLAGS = -Wall -Wextra -Werror -Wnon-literal-null-conversion
 MSG1 = @echo "Compiled ✔︎"
 MSG2 = @echo "Cleaned ✔︎"
 
