@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:16:03 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/11/09 14:40:06 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/11/09 18:48:16 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ char	**ft_split(char const *s, char c)
 		}
 		i++;
 	}
-	split[j] = 0;
+	split[j] = NULL;
 	return (split);
 }
 
