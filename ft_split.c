@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:16:03 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/11/11 13:30:16 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/11/11 18:14:22 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	counter(const char *str, char c)
 			while (str[i] && str[i] != c)
 				i++;
 		}
-		if (str[i])
+		else
 			i++;
 	}
 	return (n_words);
