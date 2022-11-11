@@ -6,7 +6,7 @@
 /*   By: rode-alb <rode-alb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:23:56 by rode-alb          #+#    #+#             */
-/*   Updated: 2022/11/02 21:10:13 by rode-alb         ###   ########.fr       */
+/*   Updated: 2022/11/11 15:28:44 by rode-alb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	*ft_calloc(size_t nitems, size_t size)
 {
 	void	*pointer;
 
-	if (((nitems * size) / size) != nitems)
-		return (NULL);
 	pointer = (char *)malloc(nitems * size);
 	if (!pointer)
 		return (NULL);
